@@ -31,6 +31,9 @@
 		49D2FB4E1C5272F0000A1AF4 /* monster@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D2FB4B1C5272F0000A1AF4 /* monster@2x.png */; };
 		49D2FB4F1C5272F0000A1AF4 /* monster@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D2FB4C1C5272F0000A1AF4 /* monster@3x.png */; };
 		9CF2EF5024D601AA0057B9C2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF2EF4F24D601AA0057B9C2 /* Constants.m */; };
+		9CF2EF5424D7591B0057B9C2 /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF2EF5124D7591B0057B9C2 /* logo@3x.png */; };
+		9CF2EF5524D7591B0057B9C2 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF2EF5224D7591B0057B9C2 /* logo.png */; };
+		9CF2EF5624D7591B0057B9C2 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CF2EF5324D7591B0057B9C2 /* logo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		49D2FB4C1C5272F0000A1AF4 /* monster@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster@3x.png"; sourceTree = "<group>"; };
 		9CF2EF4C24D601200057B9C2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		9CF2EF4F24D601AA0057B9C2 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		9CF2EF5124D7591B0057B9C2 /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
+		9CF2EF5224D7591B0057B9C2 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		9CF2EF5324D7591B0057B9C2 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 		4904AA281C4E3C9300541F75 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9CF2EF5224D7591B0057B9C2 /* logo.png */,
+				9CF2EF5324D7591B0057B9C2 /* logo@2x.png */,
+				9CF2EF5124D7591B0057B9C2 /* logo@3x.png */,
 				491156961C5A236300EE30A9 /* eject.png */,
 				491156971C5A236300EE30A9 /* eject@2x.png */,
 				491156981C5A236300EE30A9 /* eject@3x.png */,
@@ -170,10 +179,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1160;
-				ORGANIZATIONNAME = "Marc Wernecke";
+				ORGANIZATIONNAME = "Justin J. Novack";
 				TargetAttributes = {
 					490B50271C4BF65700510104 = {
 						CreatedOnToolsVersion = 7.2;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -200,8 +210,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CF2EF5624D7591B0057B9C2 /* logo@2x.png in Resources */,
 				491B34A21C4E4ECF00F42725 /* information.png in Resources */,
 				4904AA2E1C4E3C9300541F75 /* brightness.png in Resources */,
+				9CF2EF5524D7591B0057B9C2 /* logo.png in Resources */,
 				490B50351C4BF65700510104 /* Assets.xcassets in Resources */,
 				49D2FB4E1C5272F0000A1AF4 /* monster@2x.png in Resources */,
 				491B34A31C4E4ECF00F42725 /* information@2x.png in Resources */,
@@ -219,6 +231,7 @@
 				491B34991C4E487400F42725 /* contrast.png in Resources */,
 				491B349A1C4E487400F42725 /* contrast@2x.png in Resources */,
 				4911569A1C5A236300EE30A9 /* eject@2x.png in Resources */,
+				9CF2EF5424D7591B0057B9C2 /* logo@3x.png in Resources */,
 				491B349D1C4E487400F42725 /* monitor@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,11 +371,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OSDisplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.zulu-entertainment.OSDisplay";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jnovack.OSDisplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -370,11 +388,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OSDisplay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "de.zulu-entertainment.OSDisplay";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jnovack.OSDisplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

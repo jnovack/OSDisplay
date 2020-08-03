@@ -159,12 +159,12 @@ BOOL darkMode;
     
     if ([[NSRunningApplication runningApplicationsWithBundleIdentifier:[[NSBundle mainBundle] bundleIdentifier]] count] > 1) {
         NSDictionary *info = [NSDictionary dictionaryWithObjectsAndKeys: osdImagePath, @"image", osdMessage, @"message", osdLevelString, @"level", nil];
-        [center postNotificationName:@"de.zulu-entertainment.OSDisplay.LaunchCall" object:nil userInfo:info];
+        [center postNotificationName:@"com.jnovack.OSDisplay.LaunchCall" object:nil userInfo:info];
         DebugLog(@"Found another instance running - terminate now!");
         [NSApp terminate:nil];
     }
     else {
-        [center addObserver:self selector:@selector(receiveNotification:) name:@"de.zulu-entertainment.OSDisplay.LaunchCall" object:nil];
+        [center addObserver:self selector:@selector(receiveNotification:) name:@"com.jnovack.OSDisplay.LaunchCall" object:nil];
         DebugLog(@"Starting first instance run");
 
         if (darkMode) {
@@ -210,7 +210,7 @@ BOOL darkMode;
             self.textBottomSpace.constant = (self.view.bounds.size.height-self.OsdTextField.bounds.size.height)/2;
         } else {
             // tint and use the default image
-            self.OsdImageView.image = [[NSImage imageNamed:@"monster"] tintImageWithColor:tintColor];
+            // self.OsdImageView.image = [[NSImage imageNamed:@"logo"] tintImageWithColor:tintColor];
         }
 
         self.OsdLevelIndicator.hidden = YES;
@@ -302,11 +302,11 @@ BOOL darkMode;
 - (void)timeout
 {
     [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-        DebugLog(@"So long, ...");
+        DebugLog(@"animation fading out...");
         context.duration = 1.0f;
         self.view.window.animator.alphaValue = 0.0f;
     } completionHandler:^{
-        DebugLog(@"and thanks for all the fish!");
+        DebugLog(@"...animation fade complete");
         [[NSDistributedNotificationCenter defaultCenter] removeObserver:self];
         [NSApp terminate:self];
     }];
@@ -321,7 +321,7 @@ BOOL darkMode;
              [notification userInfo][@"message"],
              [notification userInfo][@"level"]);
     
-    if ([[notification name] isEqualToString:@"de.zulu-entertainment.OSDisplay.LaunchCall"])
+    if ([[notification name] isEqualToString:@"com.jnovack.OSDisplay.LaunchCall"])
     {
         [exitTimer invalidate];
         

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -682,7 +681,7 @@
                                     <constraint firstAttribute="height" constant="150" id="TZn-Rd-aRx"/>
                                     <constraint firstAttribute="width" constant="150" id="jg7-mb-Vph"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="monster" id="f1P-KU-GY6"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logo" id="f1P-KU-GY6"/>
                             </imageView>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="vB2-FU-EMr">
                                 <rect key="frame" x="18" y="10" width="164" height="25"/>
@@ -698,7 +697,7 @@
                             <levelIndicator hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sQl-s9-SbX">
                                 <rect key="frame" x="20" y="15" width="160" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <levelIndicatorCell key="cell" alignment="left" doubleValue="10" maxValue="20" warningValue="-1" criticalValue="-1" id="luj-qF-tqr" customClass="OsdLevelIndicatorCell"/>
+                                <levelIndicatorCell key="cell" continuous="YES" alignment="left" doubleValue="10" maxValue="20" warningValue="-1" criticalValue="-1" levelIndicatorStyle="continuousCapacity" id="luj-qF-tqr" customClass="OsdLevelIndicatorCell"/>
                             </levelIndicator>
                         </subviews>
                         <constraints>
@@ -724,6 +723,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="monster" width="128" height="128"/>
+        <image name="logo" width="128" height="128"/>
     </resources>
 </document>
