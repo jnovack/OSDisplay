@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Constants.h"
 
 #include <Foundation/Foundation.h>
 #import <DiscRecording/DiscRecording.h>
@@ -38,7 +39,7 @@ BOOL darkMode;
     NSInteger osdLevel = -1;
     NSInteger argc = [args count];
     NSString *tray = @"";
-    exitDelay = 1.5;
+    exitDelay = DEFAULT_EXIT_DELAY;
     
     // Commandline arguments
     for (int i=1; i<argc; i++)
@@ -63,7 +64,7 @@ BOOL darkMode;
             showLevel = NO;
             if (osdLevelString != nil) {
                 osdLevel = [osdLevelString integerValue];
-                if (osdLevel >= 0 && osdLevel <= 100) {
+                if (osdLevel >= MIN_OSD_LEVEL && osdLevel <= MAX_OSD_LEVEL) {
                     showLevel = YES;
                     showMessage = NO;
                 }
@@ -86,8 +87,8 @@ BOOL darkMode;
             i++;
             if (i >= argc) break;
             exitDelay = [args[i] floatValue];
-            if (exitDelay < 1.0 || exitDelay > 60.0) {
-                exitDelay = 1.5;
+            if (exitDelay < MIN_EXIT_DELAY || exitDelay > MAX_EXIT_DELAY) {
+                exitDelay = DEFAULT_EXIT_DELAY;
                 ErrorLog(@"Resetting delay to: %f", exitDelay);
             }
         }
@@ -167,14 +168,14 @@ BOOL darkMode;
         DebugLog(@"Starting first instance run");
 
         if (darkMode) {
-            tintColor = [NSColor colorWithWhite:0.9 alpha:0.85];
+            tintColor = [NSColor colorWithWhite:WHITE alpha:DARK_ALPHA];
         }
         else {
-            tintColor = [NSColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.85];
+            tintColor = [NSColor colorWithRed:RED green:GRN blue:BLU alpha:ALPHA];
         }
         
         // configure the font size and color
-        self.OsdTextField.font = [NSFont systemFontOfSize:18.0 weight:0.36];
+        self.OsdTextField.font = [NSFont systemFontOfSize:FONT_SIZE weight:FONT_WEIGHT];
         self.OsdTextField.textColor = tintColor;
         
         if (showMessage || showLevel) {
@@ -351,7 +352,7 @@ BOOL darkMode;
         showLevel = NO;
         if (osdLevelString != nil) {
             osdLevel = [osdLevelString integerValue];
-            if (osdLevel >= 0 && osdLevel <= 100) {
+            if (osdLevel >= MIN_OSD_LEVEL && osdLevel <= MAX_OSD_LEVEL) {
                 showLevel = YES;
                 showMessage = NO;
             }
@@ -440,7 +441,7 @@ BOOL darkMode;
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(NSWindowStyleMask)windowStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)deferCreation
 {
     if (self = [super initWithContentRect:contentRect
-                                styleMask:NSBorderlessWindowMask
+                                styleMask:NSWindowStyleMaskBorderless
                                   backing:NSBackingStoreBuffered defer:deferCreation]) {
         [self setTitle:@"OSDisplay"];
         [self setOpaque:NO];
@@ -547,8 +548,8 @@ BOOL darkMode;
     // Defaults
     self.maxValue = 100;
     self.minValue = 0;
-    NSColor *fillColor = [NSColor colorWithDeviceWhite:0.9 alpha:0.85];
-    NSColor *backColor = [NSColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.85];
+    NSColor *fillColor = [NSColor colorWithDeviceWhite:WHITE alpha:DARK_ALPHA];
+    NSColor *backColor = [NSColor colorWithRed:RED green:GRN blue:BLU alpha:ALPHA];
     
     // Draw the background
     [backColor set];
@@ -620,7 +621,7 @@ BOOL darkMode;
         [image lockFocus];
         [color set];
         NSRect imageRect = {NSZeroPoint, [image size]};
-        NSRectFillUsingOperation(imageRect, NSCompositeSourceIn);
+        NSRectFillUsingOperation(imageRect, NSCompositingOperationSourceIn);
         [image unlockFocus];
     }
     return image;

@@ -30,6 +30,7 @@
 		49D2FB4D1C5272F0000A1AF4 /* monster.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D2FB4A1C5272F0000A1AF4 /* monster.png */; };
 		49D2FB4E1C5272F0000A1AF4 /* monster@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D2FB4B1C5272F0000A1AF4 /* monster@2x.png */; };
 		49D2FB4F1C5272F0000A1AF4 /* monster@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D2FB4C1C5272F0000A1AF4 /* monster@3x.png */; };
+		9CF2EF5024D601AA0057B9C2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF2EF4F24D601AA0057B9C2 /* Constants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		49D2FB4A1C5272F0000A1AF4 /* monster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster.png; sourceTree = "<group>"; };
 		49D2FB4B1C5272F0000A1AF4 /* monster@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster@2x.png"; sourceTree = "<group>"; };
 		49D2FB4C1C5272F0000A1AF4 /* monster@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster@3x.png"; sourceTree = "<group>"; };
+		9CF2EF4C24D601200057B9C2 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		9CF2EF4F24D601AA0057B9C2 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 			children = (
 				490B502B1C4BF65700510104 /* AppDelegate.h */,
 				490B502C1C4BF65700510104 /* AppDelegate.m */,
+				9CF2EF4C24D601200057B9C2 /* Constants.h */,
+				9CF2EF4F24D601AA0057B9C2 /* Constants.m */,
 				490B50311C4BF65700510104 /* ViewController.h */,
 				490B50321C4BF65700510104 /* ViewController.m */,
 				490B50341C4BF65700510104 /* Assets.xcassets */,
@@ -164,7 +169,7 @@
 		490B50201C4BF65700510104 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Marc Wernecke";
 				TargetAttributes = {
 					490B50271C4BF65700510104 = {
@@ -174,7 +179,7 @@
 			};
 			buildConfigurationList = 490B50231C4BF65700510104 /* Build configuration list for PBXProject "OSDisplay" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -228,6 +233,7 @@
 				490B50331C4BF65700510104 /* ViewController.m in Sources */,
 				490B50301C4BF65700510104 /* main.m in Sources */,
 				490B502D1C4BF65700510104 /* AppDelegate.m in Sources */,
+				9CF2EF5024D601AA0057B9C2 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +255,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -291,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -303,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -339,7 +347,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
