@@ -209,8 +209,8 @@ BOOL darkMode;
             self.OsdImageView.image = nil;
             self.textBottomSpace.constant = (self.view.bounds.size.height-self.OsdTextField.bounds.size.height)/2;
         } else {
-            // tint and use the default image
-            // self.OsdImageView.image = [[NSImage imageNamed:@"logo"] tintImageWithColor:tintColor];
+            // use the default image
+            self.OsdImageView.image = [NSImage imageNamed:@"logo"];
         }
 
         self.OsdLevelIndicator.hidden = YES;
