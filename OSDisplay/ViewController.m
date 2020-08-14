@@ -543,6 +543,9 @@ BOOL darkMode;
 
 @implementation OsdLevelIndicatorCell
 
+/*
+ Repaints the Level Indicator cell as a series of tiny rectangles.
+ */
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView*)controlView
 {
     // Defaults
